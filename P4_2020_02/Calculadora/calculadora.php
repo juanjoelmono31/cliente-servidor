@@ -1,73 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi calculadora php</title>
 </head>
+
 <body>
-   
 
-   <span>Soy Juan Jose Gonzalez</span><br>
-   <h3>Calculadora</h3>
 
-   <form ><br>
+    <span>Soy Juan Jose Gonzalez</span><br>
+    <h3>Calculadora</h3>
 
-   <input type="text" name="n1">
-   <select name="op" >
+    <form><br>
 
-   <option value="sumar">sumar</option>
-   <option value="restar">restar</option>
-   <option value="multiplicar">multiplicar</option>
-   <option value="dividir">dividir</option>
-   
-   </select>
-   <input type="text" name="n2">
-   <input type="submit">
-   
-   </form>
+        <input type="text" name="n1">
+        <select name="op">
 
-   <?php
+            <option value="sumar">sumar</option>
+            <option value="restar">restar</option>
+            <option value="multiplicar">multiplicar</option>
+            <option value="dividir">dividir</option>
 
-$n1 = $_GET["n1"];
-$n2 = $_GET["n2"];
-$op = $_GET["op"];
+        </select>
+        <input type="text" name="n2">
+        <input type="submit">
 
-$resultado;
+    </form>
 
-if($op == "sumar"){
-    $resultado = ($n1 + $n2);
+    <?php
 
-}else if($op == "restar"){
-    $resultado = ($n1 - $n2);
+    $n1 = $_GET["n1"];
+    $n2 = $_GET["n2"];
+    $op = $_GET["op"];
 
-}else if($op == "multiplicar"){
-    $resultado = ($n1 * $n2);
+    $resultado;
 
-}else {
-    $resultado = ($n1 / $n2);
-}
+    if ($op == "sumar") {
+        $resultado = ($n1 + $n2);
+    } else if ($op == "restar") {
+        $resultado = ($n1 - $n2);
+    } else if ($op == "multiplicar") {
+        $resultado = ($n1 * $n2);
+    } else {
+        $resultado = ($n1 / $n2);
+    }
 
-echo "<br>";
+    echo "<br>";
 
 
 
-$directory=".css/img/feliz.png/";
+    $directory = ".css/img/feliz.png/";
 
-if($resultado > 0){
-    echo "el resultado es:" .$resultado;
-   echo '<img class="" src="./img/feliz.png" width="200" height="200">';
+    if ($resultado > 0) {
+        echo "el resultado es:" . $resultado;
+        echo '<img class="" src="./img/feliz.png" width="200" height="200">';
+    } else if ($resultado < 0) {
+        echo "el resultado es:" . $resultado;
+        echo '<img class="" src="./img/triste.jpg" width="200" height="200">';
+    } else {
+        $resultado == 0;
+    }
 
-
-}else if($resultado < 0){
-    echo "el resultado es:" .$resultado;
-    echo '<img class="" src="./img/triste.jpg" width="200" height="200">';
-}else{
-    $resultado == 0;
-}
-
-?>
+    ?>
 </body>
+
 </html>
-
-
